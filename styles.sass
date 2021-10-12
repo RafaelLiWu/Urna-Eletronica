@@ -1,0 +1,151 @@
+*
+    font-family: Arial, Helvetica, sans-serif
+
+=dflex($display, $justify, $align)
+    display: #{$display}
+    justify-content: #{$justify}
+    align-items: #{$align}
+@keyframes pisca 
+    0%
+        opacity: .2
+    50%
+        opacity: 1
+    100% 
+        opacity: .2     
+
+body
+    min-height: 100vh
+    width: 100vw
+    padding: 0
+    margin: 0
+    @include dflex(flex,center,center)
+    background-color: gray
+    
+.urna 
+    padding: 30px
+    background-color: #4d5247
+    display: flex
+
+    &-tela
+        width: 500px
+        height: 320px
+        background: linear-gradient(to left, rgba(244,244,244,1), rgba(255,255,255,.6) 70.71%)
+        border: 2px solid black
+        display: flex
+        flex-direction: column
+
+        &-d-1
+            flex: 1
+            display: flex
+
+            &-left
+                flex: 1
+
+                &-1
+                    height: 50px
+                    @include dflex(flex,start,center)
+                    padding: 0 14px
+
+                &-2
+                    @include dflex(flex,center,center)
+                    padding: 14px 0 0 0 
+                &-3
+                    @include dflex(flex,start,center)
+                    padding: 10px
+
+                    & .numero
+                        @include dflex(flex,center,center)
+                        border: 1px solid black
+                        height: 40px
+                        width: 30px
+                        font-size: 20px
+                        font-weight: bold
+                
+                &-4
+                    padding: 15px
+                    line-height: 30px
+                        
+                        
+            
+            &-right
+                width: 90px
+                @include dflex(flex,flex-start,flex-end)
+                flex-direction: column
+                &-image
+                    border: 1px solid #000
+                    background-color: #FFF
+                    text-align: center
+                    font-size: 14px
+
+                    & img
+                        width: 100%
+                    &.small
+                        width: 80%
+                        font-size: 12px
+                
+        &-d-2
+            height: 50px
+            font-size: 14px
+            border-top: 2px solid #000
+            padding-left: 10px
+
+
+
+
+
+    &-teclado
+        background-color: #333
+        margin-left: 20px
+
+        &-linha
+            @include dflex(flex,center,flex-end)
+
+            &--button
+                display: inline-block
+                background-color: black
+                color: white
+                margin: 10px
+                width: 70px
+                height: 40px
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+
+.branco 
+    background-color: #FFF
+    color: #000
+    font-size: 15px
+                
+.corrigir 
+    background-color: #F09046
+    color: #000
+    font-size: 15px
+    padding: 0 4px
+                
+.confirmar 
+    background-color: #48C079
+    color: #000
+    font-size: 15px
+    width: 100px
+    height: 50px
+                
+.pisca
+    animation: pisca 1.1s linear infinite
+
+.aviso-grande
+    font-weight: bolder
+    font-size: 40px
+
+.C4
+    height: 100%
+    width: 100%
+    @include dflex(flex,center,center)
+    flex-direction: column
+    text-transform: uppercase
+
+.temporizador
+    font-weight: bolder
+    font-size: 25px
+    padding: 7px 14px
+    @include dflex(flex,center,center)
